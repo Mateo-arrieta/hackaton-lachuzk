@@ -6,7 +6,7 @@
     " Santiago Barrera Arias",
     "Valentina Arias Raigosa"
   ],
-  "actualizado": "2026-10-31T17:09:31.171Z",
+  "actualizado": "2026-10-31T17:10:47.150Z",
   "entorno": {
     "node": "v24.14.0",
     "sistema": "win32 x64"
@@ -46,10 +46,10 @@
       "titulo": "Composición y regla de dependencias",
       "puntos": 15,
       "extra": false,
-      "ok": false,
-      "primeraVez": null,
-      "ultima": "2026-10-31T17:09:31.198Z",
-      "comprobaciones": "1/6",
+      "ok": true,
+      "primeraVez": "2026-10-31T17:10:47.224Z",
+      "ultima": "2026-10-31T17:10:47.224Z",
+      "comprobaciones": "6/6",
       "evidencia": ""
     }
   }
