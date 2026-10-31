@@ -36,62 +36,68 @@ import { ErrorHttp, crearManejador } from './nucleo-http.mjs';
 // De código del dominio a estado HTTP.
 const ESTADO_POR_CODIGO = {
   [CODIGOS.NO_EXISTE]: 404,
-  [CODIGOS.INVALIDO]: 422,
-  [CODIGOS.CHOQUE]: 409
-  // TODO etapa 3: un estado para cada código. Ejemplo de la forma:  [CODIGOS.NO_EXISTE]: ...,
+  [CODIGOS.NOMBRE_INVALIDO]: 422,
+  [CODIGOS.PESO_INVALIDO]: 422,
+  [CODIGOS.NOTA_INVALIDA]: 422,
+  [CODIGOS.NOMBRE_REPETIDO]: 409,
+  [CODIGOS.PESO_EXCEDIDO]: 409,
 };
 
 /** El núcleo la llama con cada error que no es un ErrorHttp. */
 export function traducirError(error) {
-  // TODO etapa 3: si NO es un ErrorDeDominio, devuélvelo tal cual (el núcleo lo volverá un 500 sin filtrar detalles).
-  //               Si lo es: new ErrorHttp(estado, error.message), con el estado de tu tabla (422 si el código no está).
-  return error;
+  if (!(error instanceof ErrorDeDominio)) return error;
+  const estado = ESTADO_POR_CODIGO[error.codigo] ?? 422;
+  return new ErrorHttp(estado, error.message);
 }
 
 /** Las rutas de la API: cada una es { metodo, ruta, manejador }. */
 export function crearRutas(casos) {
   return [
     {
+      metodo: 'GET',
+      ruta: '/evaluaciones',
+      manejador: async () => ({ status: 200, cuerpo: await casos.listar() }),
+    },
+    {
+      metodo: 'GET',
+      ruta: '/evaluaciones/{id}',
+      manejador: async ({ params }) => ({
+        status: 200,
+        cuerpo: await casos.ver(Number(params.id)),
+      }),
+    },
+    {
       metodo: 'POST',
-      url: '/evaluaciones',
+      ruta: '/evaluaciones',
       manejador: async ({ cuerpo }) => {
         const creada = await casos.crear(cuerpo);
         return { status: 201, cuerpo: creada, cabeceras: { Location: '/evaluaciones/' + creada.id } };
-      }
+      },
+    },
+    {
+      metodo: 'PATCH',
+      ruta: '/evaluaciones/{id}',
+      manejador: async ({ params, cuerpo }) => ({
+        status: 200,
+        cuerpo: await casos.calificar(Number(params.id), cuerpo?.nota),
+      }),
     },
     {
       metodo: 'DELETE',
-      url: '/evaluaciones/{id}',
+      ruta: '/evaluaciones/{id}',
       manejador: async ({ params }) => {
         await casos.eliminar(Number(params.id));
         return { status: 204 };
-      }
-    },
-    {
-      metodo: 'PATCH', 
-      url: '/evaluaciones/{id}',
-      manejador: async ({ params, cuerpo }) => {
-        const resultado = await casos.calificar(Number(params.id), cuerpo.nota);
-        return { status: 200, cuerpo: resultado };
-      }
+      },
     },
     {
       metodo: 'GET',
-      url: '/evaluaciones',
-      manejador: async () => {
-        const lista = await casos.listar();
-        return { status: 200, cuerpo: lista };
-      }
+      ruta: '/resumen',
+      manejador: async () => ({ status: 200, cuerpo: await casos.resumen() }),
     },
-    {
-      metodo: 'GET',
-      url: '/evaluaciones/{id}',
-      manejador: async ({ params }) => {
-        const evaluacion = await casos.obtener(Number(params.id));
-        return { status: 200, cuerpo: evaluacion };
-      }
-    }
   ];
+
+  
 }
 
 /** Arma el servidor HTTP (ya escrito). */
