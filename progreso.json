@@ -6,12 +6,22 @@
     " Santiago Barrera Arias",
     "Valentina Arias Raigosa"
   ],
-  "actualizado": "2026-10-31T16:45:10.513Z",
+  "actualizado": "2026-10-31T16:59:57.264Z",
   "entorno": {
     "node": "v24.14.0",
     "sistema": "win32 x64"
   },
   "etapas": {
+    "0": {
+      "titulo": "Contenedor listo",
+      "puntos": 10,
+      "extra": false,
+      "ok": true,
+      "primeraVez": "2026-10-31T17:00:02.700Z",
+      "ultima": "2026-10-31T17:00:02.700Z",
+      "comprobaciones": "2/2",
+      "evidencia": "docker 29.7.2"
+    },
     "1": {
       "titulo": "Casos de uso",
       "puntos": 15,
@@ -48,8 +58,8 @@
       "extra": false,
       "ok": false,
       "primeraVez": null,
-      "ultima": "2026-10-31T16:30:41.509Z",
-      "comprobaciones": "1/6",
+      "ultima": "2026-10-31T16:49:17.146Z",
+      "comprobaciones": "4/6",
       "evidencia": ""
     }
   }
