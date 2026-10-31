@@ -6,7 +6,7 @@
     " Santiago Barrera Arias",
     "Valentina Arias Raigosa"
   ],
-  "actualizado": "2026-10-31T17:10:47.150Z",
+  "actualizado": "2026-10-31T17:13:37.012Z",
   "entorno": {
     "node": "v24.14.0",
     "sistema": "win32 x64"
@@ -51,6 +51,16 @@
       "ultima": "2026-10-31T17:10:47.224Z",
       "comprobaciones": "6/6",
       "evidencia": ""
+    },
+    "5": {
+      "titulo": "Imagen: la API en un contenedor",
+      "puntos": 25,
+      "extra": false,
+      "ok": true,
+      "primeraVez": "2026-10-31T17:13:38.989Z",
+      "ultima": "2026-10-31T17:13:38.989Z",
+      "comprobaciones": "4/4",
+      "evidencia": "docker 29.7.2; imagen sha256:1e0fa14d1d3b"
     }
   }
 }
