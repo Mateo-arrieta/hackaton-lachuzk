@@ -35,6 +35,9 @@ import { ErrorHttp, crearManejador } from './nucleo-http.mjs';
 
 // De código del dominio a estado HTTP.
 const ESTADO_POR_CODIGO = {
+  [CODIGOS.NO_EXISTE]: 404,
+  [CODIGOS.INVALIDO]: 422,
+  [CODIGOS.CHOQUE]: 409
   // TODO etapa 3: un estado para cada código. Ejemplo de la forma:  [CODIGOS.NO_EXISTE]: ...,
 };
 
@@ -48,7 +51,46 @@ export function traducirError(error) {
 /** Las rutas de la API: cada una es { metodo, ruta, manejador }. */
 export function crearRutas(casos) {
   return [
-    // TODO etapa 3: las seis rutas de la lista de arriba. Un manejador recibe { params, cuerpo, … } y devuelve { status, cuerpo?, cabeceras? }.
+    {
+      metodo: 'POST',
+      url: '/evaluaciones',
+      manejador: async ({ cuerpo }) => {
+        const creada = await casos.crear(cuerpo);
+        return { status: 201, cuerpo: creada, cabeceras: { Location: '/evaluaciones/' + creada.id } };
+      }
+    },
+    {
+      metodo: 'DELETE',
+      url: '/evaluaciones/{id}',
+      manejador: async ({ params }) => {
+        await casos.eliminar(Number(params.id));
+        return { status: 204 };
+      }
+    },
+    {
+      metodo: 'PATCH', 
+      url: '/evaluaciones/{id}',
+      manejador: async ({ params, cuerpo }) => {
+        const resultado = await casos.calificar(Number(params.id), cuerpo.nota);
+        return { status: 200, cuerpo: resultado };
+      }
+    },
+    {
+      metodo: 'GET',
+      url: '/evaluaciones',
+      manejador: async () => {
+        const lista = await casos.listar();
+        return { status: 200, cuerpo: lista };
+      }
+    },
+    {
+      metodo: 'GET',
+      url: '/evaluaciones/{id}',
+      manejador: async ({ params }) => {
+        const evaluacion = await casos.obtener(Number(params.id));
+        return { status: 200, cuerpo: evaluacion };
+      }
+    }
   ];
 }
 
