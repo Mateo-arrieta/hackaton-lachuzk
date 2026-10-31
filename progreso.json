@@ -6,7 +6,7 @@
     " Santiago Barrera Arias",
     "Valentina Arias Raigosa"
   ],
-  "actualizado": "2026-10-31T17:14:35.462Z",
+  "actualizado": "2026-10-31T17:20:10.696Z",
   "entorno": {
     "node": "v24.14.0",
     "sistema": "win32 x64"
@@ -71,6 +71,16 @@
       "ultima": "2026-10-31T17:14:38.535Z",
       "comprobaciones": "3/3",
       "evidencia": "docker 29.7.2; volumen"
+    },
+    "7": {
+      "titulo": "Extra: el mismo resultado con los dos motores",
+      "puntos": 10,
+      "extra": true,
+      "ok": true,
+      "primeraVez": "2026-10-31T17:20:16.901Z",
+      "ultima": "2026-10-31T17:20:16.901Z",
+      "comprobaciones": "7/7",
+      "evidencia": "docker 29.7.2 + podman 5.8.3"
     }
   }
 }
