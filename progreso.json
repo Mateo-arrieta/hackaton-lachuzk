@@ -6,11 +6,7 @@
     " Santiago Barrera Arias",
     "Valentina Arias Raigosa"
   ],
-<<<<<<< HEAD
-  "actualizado": "2026-10-31T17:20:10.696Z",
-=======
-  "actualizado": "2026-10-31T16:59:57.264Z",
->>>>>>> 9df74a80d65a6e998ecc617ee6e52006f4dd17ea
+  "actualizado": "2026-10-31T17:27:52.889Z",
   "entorno": {
     "node": "v24.14.0",
     "sistema": "win32 x64"
@@ -21,18 +17,18 @@
       "puntos": 10,
       "extra": false,
       "ok": true,
-      "primeraVez": "2026-10-31T17:00:02.700Z",
-      "ultima": "2026-10-31T17:00:02.700Z",
+      "primeraVez": "2026-10-31T17:27:49.648Z",
+      "ultima": "2026-10-31T17:27:49.648Z",
       "comprobaciones": "2/2",
-      "evidencia": "docker 29.7.2"
+      "evidencia": "docker 29.7.2 + podman 5.8.3"
     },
     "1": {
       "titulo": "Casos de uso",
       "puntos": 15,
       "extra": false,
       "ok": true,
-      "primeraVez": "2026-10-31T16:38:20.287Z",
-      "ultima": "2026-10-31T16:39:35.748Z",
+      "primeraVez": "2026-10-31T17:27:49.656Z",
+      "ultima": "2026-10-31T17:27:49.656Z",
       "comprobaciones": "9/9",
       "evidencia": ""
     },
@@ -41,8 +37,8 @@
       "puntos": 15,
       "extra": false,
       "ok": true,
-      "primeraVez": "2026-10-31T16:45:10.547Z",
-      "ultima": "2026-10-31T16:45:10.547Z",
+      "primeraVez": "2026-10-31T17:27:49.696Z",
+      "ultima": "2026-10-31T17:27:49.696Z",
       "comprobaciones": "15/15",
       "evidencia": ""
     },
@@ -51,8 +47,8 @@
       "puntos": 20,
       "extra": false,
       "ok": true,
-      "primeraVez": "2026-10-31T17:09:23.060Z",
-      "ultima": "2026-10-31T17:09:23.060Z",
+      "primeraVez": "2026-10-31T17:27:49.761Z",
+      "ultima": "2026-10-31T17:27:49.761Z",
       "comprobaciones": "12/12",
       "evidencia": ""
     },
@@ -60,17 +56,10 @@
       "titulo": "Composición y regla de dependencias",
       "puntos": 15,
       "extra": false,
-<<<<<<< HEAD
       "ok": true,
-      "primeraVez": "2026-10-31T17:10:47.224Z",
-      "ultima": "2026-10-31T17:10:47.224Z",
+      "primeraVez": "2026-10-31T17:27:49.783Z",
+      "ultima": "2026-10-31T17:27:49.783Z",
       "comprobaciones": "6/6",
-=======
-      "ok": false,
-      "primeraVez": null,
-      "ultima": "2026-10-31T16:49:17.146Z",
-      "comprobaciones": "4/6",
->>>>>>> 9df74a80d65a6e998ecc617ee6e52006f4dd17ea
       "evidencia": ""
     },
     "5": {
@@ -78,18 +67,18 @@
       "puntos": 25,
       "extra": false,
       "ok": true,
-      "primeraVez": "2026-10-31T17:13:38.989Z",
-      "ultima": "2026-10-31T17:13:38.989Z",
+      "primeraVez": "2026-10-31T17:27:52.334Z",
+      "ultima": "2026-10-31T17:27:52.334Z",
       "comprobaciones": "4/4",
-      "evidencia": "docker 29.7.2; imagen sha256:1e0fa14d1d3b"
+      "evidencia": "docker 29.7.2; imagen sha256:01bd2ce177f3"
     },
     "6": {
       "titulo": "Extra: datos que sobreviven en un volumen",
       "puntos": 10,
       "extra": true,
       "ok": true,
-      "primeraVez": "2026-10-31T17:14:38.535Z",
-      "ultima": "2026-10-31T17:14:38.535Z",
+      "primeraVez": "2026-10-31T17:27:56.553Z",
+      "ultima": "2026-10-31T17:27:56.553Z",
       "comprobaciones": "3/3",
       "evidencia": "docker 29.7.2; volumen"
     },
@@ -98,8 +87,8 @@
       "puntos": 10,
       "extra": true,
       "ok": true,
-      "primeraVez": "2026-10-31T17:20:16.901Z",
-      "ultima": "2026-10-31T17:20:16.901Z",
+      "primeraVez": "2026-10-31T17:28:01.856Z",
+      "ultima": "2026-10-31T17:28:01.856Z",
       "comprobaciones": "7/7",
       "evidencia": "docker 29.7.2 + podman 5.8.3"
     }
